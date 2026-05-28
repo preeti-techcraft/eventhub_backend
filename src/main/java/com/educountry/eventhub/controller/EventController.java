@@ -102,8 +102,8 @@ public class EventController {
             Files.write(filePath, file.getBytes());
 
             // The URL path will be accessible via our WebConfig resource handler mapped to /uploads/**
-            String imageUrl = "http://localhost:8080/uploads/gallery/" + uniqueFileName;
-            
+            String baseUrl = org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+            String imageUrl = baseUrl + "/uploads/gallery/" + uniqueFileName;
             Event updatedEvent = eventService.addGalleryImage(id, imageUrl);
             return ResponseEntity.ok(new ApiResponse<>(true, "Image uploaded successfully", updatedEvent));
 

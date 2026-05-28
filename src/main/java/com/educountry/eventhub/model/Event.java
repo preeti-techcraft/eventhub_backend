@@ -61,7 +61,7 @@ public class Event {
     @JsonIgnoreProperties("event")
     private List<Booking> bookings = new ArrayList<>();
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "event_gallery", joinColumns = @JoinColumn(name = "event_id"))
     @Column(name = "image_url", length = 1000)
     private List<String> galleryImages = new ArrayList<>();
