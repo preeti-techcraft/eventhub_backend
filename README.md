@@ -4,7 +4,7 @@ Welcome to the backend service of **EventHub**, a robust, production-ready Event
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+##  Tech Stack & Architecture
 
 - **Core Framework**: Spring Boot (Java 11+)
 - **Security**: Spring Security & stateless JWT (JSON Web Token) authentication
@@ -26,7 +26,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 backend/
@@ -44,7 +44,7 @@ backend/
 
 ---
 
-## ⚙️ Setup & Configuration
+##  Setup & Configuration
 
 This project is configured to read sensitive values and database credentials from environment variables to maintain maximum security.
 
@@ -69,7 +69,7 @@ SERVER_PORT=8080
 
 ---
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Prerequisites
 * Java JDK 11 or higher installed
@@ -92,18 +92,18 @@ The application will start, automatically generate all database tables, and run 
 
 ---
 
-## 🔐 Key Features
+##  Key Features
 
-### 🛡️ Stateless JWT Authentication
+###  Stateless JWT Authentication
 All requests under `/api/**` (except registration and login routes under `/api/auth/**`) require a valid JWT token passed in the header:
 ```http
 Authorization: Bearer <your_jwt_token>
 ```
 
-### 📈 Transaction Safety
+###  Transaction Safety
 Critical database modifications (like ticket booking or slot decrementing) are fully protected with `@Transactional` tags to prevent double-booking anomalies or race conditions.
 
-### 📝 Uniform JSON Responses
+###  Uniform JSON Responses
 All API endpoints yield a standard response signature:
 ```json
 {
